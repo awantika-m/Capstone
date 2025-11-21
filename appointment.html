@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="healsphere.css">
+</head>
+<body>
+    <header>
+        <div id="navbar">
+            <img src="logo.png" alt="HealSphere Logo">
+
+            <div class="searchbar">
+                <input type="text" id="searchbar" placeholder="Search here...">
+                <button id="searchbtn">Search</button>
+            </div>
+            <div class="location">
+                <a href="https://www.google.com/maps">Location</a>
+            </div>
+
+            <div class="loginhome">
+                <a href="Login.html"><button>Login</button></a>
+            </div>
+        </div>
+    </header>
+        <div class="appointment-wrapper">
+            <div class="appointment-image">
+                <img src="main3.png" alt="appointment image">
+            </div>
+
+            <form class="appointmentform">
+                <h2>Book Appointment</h2>
+
+                <div class="form-row">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-row form-row--two">
+                    <div class="col">
+                        <label for="date">Appointment Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="col">
+                        <label for="time">Appointment Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <input type="submit" value="Book Appointment" class="appointment-submit">
+                </div>
+            </form>
+        </div>
+   
+</body>
+</html>
