@@ -3,14 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User Profile - HealSphere</title>
+    <link rel="stylesheet" href="healsphere.css">
+    <link rel="stylesheet" href="profile.css">
 </head>
 <body>
-    <fieldset>
-        <legend><h2>User Profile</h2></legend>
-        <p><strong>Name:</strong> John Doe</p>
-        <p><strong>Email:</strong>
-    </fieldset>
+    <header>
+        <div id="navbar">
+            <img src="logo.png" alt="HealSphere Logo">
+
+            <div class="searchbar">
+                <input type="text" id="searchbar" placeholder="Search here...">
+                <button id="searchbtn">Search</button>
+            </div>
+            <div class="location">
+                <a href="https://www.google.com/maps">Location</a>
+            </div>
+            <div class="profile">
+                <a href="profile.html">Profile</a>
+            </div>
+            <div class="loginhome">
+                <a href="Login.html"><button>Login</button></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile-container">
+        <h1>User Profile</h1>
+
+        <!-- Personal Info -->
+        <div class="profile-section">
+            <h2>Personal Information</h2>
+            <div class="profile-content">
+                <img src="profile.png" alt="Profile Picture" class="profile-pic">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>Name:</strong>
+                        <span>John Doe</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Age:</strong>
+                        <span>57 years</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Gender:</strong>
+                        <span>Male</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Blood Group:</strong>
+                        <span>B+</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Contact:</strong>
+                        <span>+91 8573628931</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Medical Information -->
+        <div class="profile-section">
+            <h2>Medical Information</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Medical History:</strong>
+                    <span>Asthma</span>
+                </div>
+                <div class="info-item">
+                    <strong>Current Medications:</strong>
+                    <span>Inhaler (Salbutamol)</span>
+                </div>
+                <div class="info-item">
+                    <strong>Allergies:</strong>
+                    <span>Penicillin</span>
+                </div>
+                <div class="info-item">
+                    <strong>Chronic Conditions:</strong>
+                    <span>None</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upcoming Appointment -->
+        <div class="profile-section">
+            <h2>Upcoming Appointment</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Doctor:</strong>
+                    <span>Dr. Priya Sharma (Pulmonologist)</span>
+                </div>
+                <div class="info-item">
+                    <strong>Date:</strong>
+                    <span>25 Nov 2025</span>
+                </div>
+                <div class="info-item">
+                    <strong>Time:</strong>
+                    <span>11:30 AM</span>
+                </div>
+                <div class="info-item">
+                    <strong>Hospital:</strong>
+                    <span>Apollo Hospital, Mumbai</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emergency Contact -->
+        <div class="profile-section">
+            <h2>Emergency Contact</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Name:</strong>
+                    <span>Arjun Verma</span>
+                </div>
+                <div class="info-item">
+                    <strong>Relation:</strong>
+                    <span>Brother</span>
+                </div>
+                <div class="info-item">
+                    <strong>Phone:</strong>
+                    <span>+91 9822334455</span>
+                </div>
+            </div>
+        </div>
+    </main>
+        <footer>
+<div class="footer-content">
+    <p> 2024 HealSphere. All rights reserved.</p>
+    <div class="social-media">
+        <img src="facebook.png" alt="Facebook" class="social-icon">
+        <img src="twitter.png" alt="Twitter" class="social-icon">
+        <img src="insta.png" alt="Instagram" class="social-icon">
+    </div>
+<div><p>HealSphere services are only available in the U.S. <br>The information provided on this website is not intended for consumers outside of the U.S.©2025 1Life Healthcare, Inc. All rights reserved.</p></div>
+</footer>
     </body>
-</body>
+
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Book Appointment - HealSphere</title>
     <link rel="stylesheet" href="healsphere.css">
 </head>
 <body>
@@ -18,46 +18,128 @@
             <div class="location">
                 <a href="https://www.google.com/maps">Location</a>
             </div>
-
+            <div class="profile">
+                <a href="profile.html">Profile</a>
+            </div>
             <div class="loginhome">
                 <a href="Login.html"><button>Login</button></a>
             </div>
         </div>
     </header>
-        <div class="appointment-wrapper">
-            <div class="appointment-image">
-                <img src="main3.png" alt="appointment image">
+
+    <!-- Success Message -->
+    <div id="successMessage" class="success-message">
+        <div class="success-content">
+            <span class="success-icon">✓</span>
+            <h3>Appointment Booked Successfully!</h3>
+            <p id="successDetails"></p>
+            <button class="success-close-btn" onclick="closeSuccessMessage()">Done</button>
+        </div>
+    </div>
+
+    <div class="appointment-wrapper">
+        <div class="appointment-image">
+            <img src="main3.png" alt="appointment image">
+        </div>
+
+        <form class="appointmentform" id="appointmentForm">
+            <h2>Book Appointment</h2>
+
+            <div class="form-row">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
             </div>
 
-            <form class="appointmentform">
-                <h2>Book Appointment</h2>
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
 
-                <div class="form-row">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+            <div class="form-row form-row--two">
+                <div class="col">
+                    <label for="date">Appointment Date</label>
+                    <input type="date" id="date" name="date" required>
                 </div>
+                <div class="col">
+                    <label for="time">Appointment Time</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+            </div>
 
-                <div class="form-row">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
-                </div>
+            <div class="form-row">
+                <input type="submit" value="Book Appointment" class="appointment-submit">
+            </div>
+        </form>
+    </div>
 
-                <div class="form-row form-row--two">
-                    <div class="col">
-                        <label for="date">Appointment Date</label>
-                        <input type="date" id="date" name="date" required>
-                    </div>
-                    <div class="col">
-                        <label for="time">Appointment Time</label>
-                        <input type="time" id="time" name="time" required>
-                    </div>
-                </div>
+    <footer>
+        <div class="footer-content">
+            <p> 2024 HealSphere. All rights reserved.</p>
+            <div class="social-media">
+                <img src="facebook.png" alt="Facebook" class="social-icon">
+                <img src="twitter.png" alt="Twitter" class="social-icon">
+                <img src="insta.png" alt="Instagram" class="social-icon">
+            </div>
+            <div><p>HealSphere services are only available in the U.S. <br>The information provided on this website is not intended for consumers outside of the U.S.©2025 1Life Healthcare, Inc. All rights reserved.</p></div>
+        </footer>
+    </div>
 
-                <div class="form-row">
-                    <input type="submit" value="Book Appointment" class="appointment-submit">
-                </div>
-            </form>
-        </div>
-   
+    <script>
+        // Get the form element
+        const appointmentForm = document.getElementById('appointmentForm');
+
+        // Add submit event listener
+        appointmentForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+
+            // Format the date to readable format
+            const appointmentDate = new Date(date);
+            const formattedDate = appointmentDate.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+
+            // Show success message with appointment details
+            showSuccessMessage(name, formattedDate, time, email);
+
+            // Reset the form
+            appointmentForm.reset();
+        });
+
+        function showSuccessMessage(name, date, time, email) {
+            const successMessage = document.getElementById('successMessage');
+            const successDetails = document.getElementById('successDetails');
+
+            // Create detailed message
+            successDetails.innerHTML = `
+                <strong>Appointment Details:</strong><br>
+                Patient: ${name}<br>
+                Email: ${email}<br>
+                Date: ${date}<br>
+                Time: ${time}<br><br>
+                <span style="font-size: 0.9rem; color: #666;">A confirmation email has been sent to ${email}</span>
+            `;
+
+            // Show the success message
+            successMessage.style.display = 'flex';
+
+            // Auto-hide after 8 seconds
+            setTimeout(function() {
+                closeSuccessMessage();
+            }, 8000);
+        }
+
+        function closeSuccessMessage() {
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
